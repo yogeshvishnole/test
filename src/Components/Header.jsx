@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <menu className="flex justify-between w-full">
+    <menu className="flex justify-between w-full ">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
