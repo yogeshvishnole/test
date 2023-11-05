@@ -1,4 +1,5 @@
-import React from "react";
+import Card from "./Card";
+import Container from "./Container";
 
 const staticData = [
   {
@@ -31,25 +32,34 @@ const staticData = [
 
 const Slider = () => {
   return (
-    <div className="my-10">
-      <p>Quality features </p>
-      <h1>Tutorials that people love most</h1>
+    <div className="pt-12">
+      <Container>
+        <div className="my-10">
+          <div className="text-center  mb-14">
+            <p className="text-orange-400 text-center leading-10 font-semibold ">
+              QUALITY FEATURES{" "}
+            </p>
+            <h1 className="text-slate-800 font-bold text-center leading-[58px] text-4xl">
+              Tutorials that people love most
+            </h1>
+          </div>
 
-      <Card />
+          <div className="flex space-x-4">
+            {staticData.map((data) => (
+              <Card
+                key={data.id}
+                img={data.img}
+                title={data.title}
+                watched={data.watched}
+                rating={data.rating}
+                reviews={data.reviews}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };
 
-const Card = () => {
-  return (
-    <div>
-      <img src={staticData[0].img} alt="card-img" />
-      <div>
-        <h1>{staticData[0].title}</h1>
-
-        <p>{` ${staticData[0].watched} students watched `}</p>
-      </div>
-    </div>
-  );
-};
 export default Slider;

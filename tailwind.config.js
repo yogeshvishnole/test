@@ -6,6 +6,7 @@ export default {
       secondary: "Poppins",
       primary: "DM Sans",
       tertiary: "Heebo",
+      third: "Lexend Deca",
     },
     extend: {},
   },

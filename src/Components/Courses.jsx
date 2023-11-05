@@ -1,21 +1,86 @@
-import React from "react";
+import Container from "./Container";
+import SectionHeading from "./UI/SectionHeading";
+
+const coursesData = [
+  {
+    id: 1,
+    rating: 5.0,
+    reviews: 392,
+    watched: 2538,
+    title:
+      "Professional graphic design tutorial full course with exercise file",
+    description:
+      "Get your tutorials delivered at let home collect sample from the victory of the managments",
+    videoClassCount: "7 video classes",
+    duration: "4 hrs",
+  },
+  {
+    id: 2,
+    rating: 5.0,
+    reviews: 392,
+    watched: 2538,
+    title: "Become ultimate photoshop expert within 30 days",
+    description:
+      "Get your tutorials delivered at let home collect sample from the victory of the managments",
+    videoClassCount: "7 video classes",
+    duration: "4 hrs",
+  },
+  {
+    id: 3,
+    rating: 5.0,
+    reviews: 392,
+    watched: 2538,
+    title: "After effects animation tutorial with photoshop documents",
+    description:
+      "Get your tutorials delivered at let home collect sample from the victory of the managments",
+    videoClassCount: "7 video classes",
+    duration: "4 hrs",
+  },
+  {
+    id: 4,
+    rating: 5.0,
+    reviews: 392,
+    watched: 2538,
+    title: "Adobe illustrator vector art design mockup",
+    description:
+      "Get your tutorials delivered at let home collect sample from the victory of the managments",
+    videoClassCount: "7 video classes",
+    duration: "4 hrs",
+  },
+];
 
 const Courses = () => {
   return (
-    <div className="my-4">
-      <p>QUALITY FEATURES</p>
-      <h1>Popular Designing Course</h1>
-      <CourseDetails />
-    </div>
+    <Container>
+      <div className="flex flex-col justify-center">
+        <SectionHeading
+          subheading="QUALITY FEATURES"
+          heading="Popular Designing Course"
+        />
+
+        <div>
+          {coursesData.map((data) => {
+            return (
+              <CourseDetails
+                key={data.id}
+                title={data.title}
+                description={data.description}
+                vCount={data.videoClassCount}
+                duration={data.duration}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </Container>
   );
 };
 
-const CourseDetails = () => {
+const CourseDetails = ({ title, description, vCount, duration }) => {
   return (
     <div>
       <div className="flex my-4">
         <div>
-          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="31"
@@ -30,15 +95,11 @@ const CourseDetails = () => {
           </svg>
         </div>
 
-        <h1 className="mx-2">
-          Professional graphic design tutorial full course with exercise file
-        </h1>
-        <button>7 video classes | 4 hrs</button>
+        <h1 className="mx-2">{title}</h1>
+        <button>{`${vCount} | ${duration}`}</button>
+        {/* <img src="assets/dropdown.jpg" alt="dropdown-logo" /> */}
       </div>
-      <p>
-        Get your tutorials delivered at let home collect sample from the victory
-        of the managments.
-      </p>
+      <p>{description}</p>
     </div>
   );
 };

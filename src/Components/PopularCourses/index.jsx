@@ -1,4 +1,5 @@
 import Container from "../Container";
+import SectionHeading from "../UI/SectionHeading";
 import Course from "./Course";
 
 const popularCourses = [
@@ -78,15 +79,21 @@ const popularCourses = [
 
 function PopularCourses() {
   return (
-    <Container>
-      <ul>
-        {popularCourses.map((course) => (
-          <li key={course.id} className="[&:not(:last-child)]:pb-5">
-            <Course course={course} />
-          </li>
-        ))}
-      </ul>
-    </Container>
+    <div className="py-20">
+      <Container>
+        <SectionHeading
+          subheading="Quality features"
+          heading="Popular Designing Course"
+        />
+        <ul className="pt-14">
+          {popularCourses.map((course) => (
+            <li key={course.id} className="[&:not(:last-child)]:pb-5">
+              <Course course={course} />
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </div>
   );
 }
 
