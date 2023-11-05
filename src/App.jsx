@@ -5,17 +5,16 @@ import Slider from "./Components/Slider";
 import Features from "./Components/Features";
 import Courses from "./Components/Courses";
 import Steps from "./Components/Steps";
+import Pricing from "./Components/Pricing";
+import Footer from "./Components/Footer";
+import Ready from "./Components/Ready";
+import Faq from "./Components/Faq";
+import SectionHeading from "./Components/UI/SectionHeading";
 
 const App = () => {
   return (
     <div>
-      <Container>
-        <Header />
-        <Slider />
-        <Features />
-        <Courses />
-        <Steps />
-      </Container>
+      <Steps />
     </div>
   );
 };
