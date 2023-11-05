@@ -2,6 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      secondary: "Poppins",
+      primary: "DM Sans",
+      tertiary: "Heebo",
+    },
     extend: {},
   },
   plugins: [],
